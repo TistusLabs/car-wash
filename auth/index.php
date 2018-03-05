@@ -1,5 +1,5 @@
 <?php
-    require_once ("include/authenticity.php");
+    //require_once ("include/authenticity.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" ng-app="loginapp">
