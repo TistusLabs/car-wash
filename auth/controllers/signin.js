@@ -5,10 +5,10 @@ app.controller('SigninController', ['$scope', '$rootScope', '$state', '$timeout'
 function signinController($scope, $rootScope, $state, $timeout, $http, $systemUrls, $helpers) {
     console.log("signup page loaded");
 
-    $scope.loginUser = function (username, password) {
+    $scope.loginUser = function (user) {
         var userDetails = {
-            "UserName": username,
-            "Password": password
+            "email": user.email,
+            "password": user.password
         }
         // headers: {
         //     "Access-Control-Allow-Origin": "*",
@@ -18,17 +18,15 @@ function signinController($scope, $rootScope, $state, $timeout, $http, $systemUr
         // }
         $http({
             method: "POST",
-            url: $systemUrls.svc_access + "/UserService/Access.svc/Login",
-            dataType: 'json',
+            url: $systemUrls.userService + "/authenticate",
             data: userDetails,
             headers: {
                 "Content-Type": "application/json"
             }
         }).then(function (response, status) {
             debugger
-            if(response.data.SecurityToken != null){
-                $helpers.setCookie("securityToken", response.data.SecurityToken, 1);
-                $helpers.setCookie("SessionKey", response.data.SessionKey, 1);
+            if(response.data.Token != null){
+                $helpers.setCookie("Authorization", response.data.Token, 1);
                 window.location.href ="../";
             }else if(response.data.Error != null){
                 alert("There was an error: "+response.data.Error.ErrorMessage);
