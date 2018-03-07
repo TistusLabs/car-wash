@@ -241,10 +241,10 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a href="layout-fullscreen.html">New Customer</a>
+                                            <a ui-sref="new-customer">New Customer</a>
                                         </li>
                                         <li>
-                                            <a href="layout-horizontal-menu.html">All Customers</a>
+                                            <a ui-sref="all-customers">All Customers</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -510,6 +510,7 @@
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="js/controllers/dashboard.js"></script>
     <script type="text/javascript" src="js/controllers/documents.js"></script>
+    <script type="text/javascript" src="js/controllers/customer.js"></script>
 
     <!-- jQuery Library -->
     <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
@@ -564,7 +565,7 @@
                 Materialize.toast('<span>You can swipe me too!</span>', 3000);
             }, 5000);
             setTimeout(function () {
-                Materialize.toast('<span>You have new order.</span><a class="btn-flat yellow-text" href="#">Read<a>', 3000);
+                Materialize.toast('<div id="card-alert" class="card green lighten-5"><div class="card-content green-text"><p>SUCCESS : The page has been added.</p></div><button type="button" class="close green-text" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button></div>', 3000);
             }, 15000);
         });
     </script>

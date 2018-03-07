@@ -23,6 +23,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/fileupload',
             templateUrl: 'partials/fileupload.html',
             controller: 'DocumentController'
+        }).state('new-customer', {
+            url: '/new-customer',
+            templateUrl: 'partials/customer-new.html',
+            controller: 'CustomerController'
+        }).state('all-customers', {
+            url: '/all-customers',
+            templateUrl: 'partials/customers-all.html',
+            controller: 'CustomerController'
         });
 
 }

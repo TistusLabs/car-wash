@@ -228,6 +228,7 @@
         var p = location.protocol;
         return {
             userService: p + "//localhost:3535/api/users",
+            profileService: p + "//localhost:3535/api/profile",
             emailService: p + "//localhost:3535/api/verification"
         };
     });
