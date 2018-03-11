@@ -40,6 +40,8 @@
   <!--jsgrid css-->
   <link href="js/plugins/jsgrid/css/jsgrid.min.css" type="text/css" rel="stylesheet" media="screen,projection">
   <link href="js/plugins/jsgrid/css/jsgrid-theme.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--data-tables-->
+  <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 </head>
 
@@ -259,10 +261,10 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a href="layout-horizontal-menu.html">New Vehicle</a>
+                                            <a ui-sref="new-vehicle">New Vehicle</a>
                                         </li>
                                         <li>
-                                            <a href="layout-horizontal-menu.html">All Vehicles</a>
+                                            <a ui-sref="all-vehicles">All Vehicles</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -511,6 +513,7 @@
     <script type="text/javascript" src="js/controllers/dashboard.js"></script>
     <script type="text/javascript" src="js/controllers/documents.js"></script>
     <script type="text/javascript" src="js/controllers/customer.js"></script>
+    <script type="text/javascript" src="js/controllers/vehicles.js"></script>
 
     <!-- jQuery Library -->
     <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>
@@ -554,6 +557,10 @@
     <script type="text/javascript" src="js/plugins/jsgrid/js/db.js"></script> <!--data-->
     <script type="text/javascript" src="js/plugins/jsgrid/js/jsgrid.min.js"></script>
     <script type="text/javascript" src="js/plugins/jsgrid/js/jsgrid-script.js"></script>
+    <!-- data-tables -->
+    <script type="text/javascript" src="js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="js/plugins/data-tables/data-tables-script.js"></script>
+
     <!-- Toast Notification -->
     <script type="text/javascript">
         // Toast Notification

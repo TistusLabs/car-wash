@@ -229,6 +229,7 @@
         return {
             userService: p + "//localhost:3535/api/users",
             profileService: p + "//localhost:3535/api/profile",
+            vehicleService: p + "//localhost:3535/api/vehicle",
             emailService: p + "//localhost:3535/api/verification"
         };
     });

@@ -1,9 +1,11 @@
 /* use strict */
 
-app.controller('CustomerController', ['$scope', '$rootScope', '$state', '$timeout', '$http', '$systemUrls', '$helpers', customerController]);
+app.controller('CustomerController', ['$scope', '$rootScope', '$state', '$timeout', '$http', '$systemUrls', '$helpers', '$stateParams', customerController]);
 
-function customerController($scope, $rootScope, $state, $timeout, $http, $systemUrls, $helpers) {
+function customerController($scope, $rootScope, $state, $timeout, $http, $systemUrls, $helpers, $stateParams) {
     console.log("Customer page loaded");
+
+    // console.log($state.params);
 
     $scope.addNewCustomer = function (profile) {
         $http({
@@ -14,16 +16,40 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
                 "Content-Type": "application/json"
             }
         }).then(function (response, status) {
-            if (response.data != null) {
-                Materialize.toast('<span>Hiya! I am a toast.</span>', 1500);
-            } else if (response.data.Error != null) {
-                Materialize.toast('<span>Hiya! I am a toast.</span>', 1500);
+            if (response.data.IsSuccess) {
+                $rootScope.showToast("New customer added successfully.");
+            } else {
+                $rootScope.showToast("There was an error when trying to save the customer details.");
             }
             console.log(response, status);
         }, function (response, status) {
             console.log(response, status);
-            Materialize.toast('<span>Hiya! I am a toast.</span>', 1500);
+            $rootScope.showToast("There was an error when trying to save the customer details.");
         });
+        $scope.profile = {};
+    }
+
+    $scope.getCustomerByID = function (ID) {
+        $http({
+            method: "GET",
+            url: $systemUrls.profileService + "/" + ID,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data != null) {
+                $scope.profile = response.data;
+            } else {
+                $rootScope.showToast("No Customer found of that ID number..");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("Failed to get customer details.");
+        });
+    }
+    if(!$rootScope.isNullOrEmptyOrUndefined($state.params.customerID)){
+        $scope.getCustomerByID($state.params.customerID);
     }
 
     $scope.getAllCustomers = function () {
@@ -41,7 +67,6 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
                     editing: false,
                     sorting: true,
                     paging: true,
-                    autoload: true,
                     pageSize: 15,
                     pageButtonCount: 5,
                     deleteConfirm: "Do you really want to delete the customer?",
@@ -52,15 +77,18 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
                         { name: "mobile", title: "Mobile", type: "text", width: 150 },
                         { name: "email", title: "Email", type: "text", width: 150 },
                         { name: "address", title: "Address", type: "text", width: 200 }
-                    ]
+                    ],
+                    rowClick: function (args) {
+                        $state.go("customer-details", { customerID: args.item._id });
+                    }
                 });
             } else if (response.data.Error != null) {
-                Materialize.toast('<span>Hiya! I am a toast.</span>', 3000);
+                $rootScope.showToast("Failed to get customer details.");
             }
             console.log(response, status);
         }, function (response, status) {
             console.log(response, status);
-            Materialize.toast('<span>Hiya! I am a toast.</span>', 3000);
+            $rootScope.showToast("Failed to get customer details.");
         });
 
     }

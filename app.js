@@ -31,6 +31,18 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/all-customers',
             templateUrl: 'partials/customers-all.html',
             controller: 'CustomerController'
+        }).state('customer-details', {
+            url: '/customer/:customerID',
+            templateUrl: 'partials/customer-details.html',
+            controller: 'CustomerController'
+        }).state('new-vehicle', {
+            url: '/new-vehicle',
+            templateUrl: 'partials/vehicle-new.html',
+            controller: 'VehicleController'
+        }).state('all-vehicles', {
+            url: '/all-vehicles',
+            templateUrl: 'partials/vehicles-all.html',
+            controller: 'VehicleController'
         });
 
 }
@@ -48,4 +60,12 @@ function mainController($scope, $rootScope, $state, $timeout, $http) {
             notifications: 1
         }
     }
+
+    $rootScope.showToast = function (Message) {
+        Materialize.toast('<span>' + Message + '</span>', 3000);
+    }
+
+    $rootScope.isNullOrEmptyOrUndefined = function (value) {
+        return !value;
+    };
 }

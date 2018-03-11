@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">Customer Details</h5>
+        <ol class="breadcrumbs">
+            <li>
+                <a>General</a>
+            </li>
+            <li>
+                <a>Customers</a>
+            </li>
+            <li>
+                <a>All Customers</a>
+            </li>
+            <li>
+                <a class="active" ui-sref="new-customer">Customer Details</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 12">
+        <div class="divider"></div>
+
+        <div id="input-fields">
+            <h4 class="header">{{profile.firstName}} {{profile.lastName}}</h4>
+            <div class="row">
+                <div class="col s12 m4 l3">
+                    <img style="height:250px;width:250px;" src="https://image.flaticon.com/icons/png/512/146/146031.png">
+                </div>
+                <div class="col s12 m8 l9">
+                    <div class="row">
+                        <form class="col s12" name="newcustomer">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input ng-model="profile.firstName" id="first_name" type="text" class="validate" required>
+                                    <label class="active" for="first_name">First Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-model="profile.lastName" id="last_name" type="text" class="validate">
+                                    <label class="active" for="last_name">Last Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input ng-model="profile.email" id="email_address" type="email" class="validate">
+                                    <label class="active" for="email_address">Email Address</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-model="profile.mobile" id="mobile_number" type="text" class="validate">
+                                    <label class="active" for="mobile_number">Mobile Number</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input ng-model="profile.address" value="" id="address" type="text" class="validate">
+                                    <label class="active" for="address">Address</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label class="active" for="address">Tagged Vehicles</label>
+                                    <div>
+                                        <p><b>Vehicle One</b></p>
+                                        <p>Vehicle info</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button ng-click="" ng-disabled='newcustomer.$invalid' class="btn waves-effect waves-light " type="submit" name="action">Update</button>
+                                    <button ng-click="" class="btn waves-effect waves-light " type="button" name="action">Delete</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
