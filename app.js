@@ -68,4 +68,8 @@ function mainController($scope, $rootScope, $state, $timeout, $http) {
     $rootScope.isNullOrEmptyOrUndefined = function (value) {
         return !value;
     };
+
+    $rootScope.navigateToState = function(to){
+        $state.go(to);
+    }
 }

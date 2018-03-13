@@ -16,8 +16,10 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
                 "Content-Type": "application/json"
             }
         }).then(function (response, status) {
+            debugger
             if (response.data.IsSuccess) {
                 $rootScope.showToast("New customer added successfully.");
+                $rootScope.navigateToState("all-customers");
             } else {
                 $rootScope.showToast("There was an error when trying to save the customer details.");
             }
