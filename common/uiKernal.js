@@ -227,10 +227,10 @@
     uik.factory('$systemUrls', function () {
         var p = location.protocol;
         return {
-            userService: p + "//localhost:3535/api/users",
-            profileService: p + "//localhost:3535/api/profile",
-            vehicleService: p + "//localhost:3535/api/vehicle",
-            emailService: p + "//localhost:3535/api/verification"
+            userService: p + "//carwash-backend.herokuapp.com/api/users",
+            profileService: p + "//carwash-backend.herokuapp.com/api/profile",
+            vehicleService: p + "//carwash-backend.herokuapp.com/api/vehicle",
+            emailService: p + "//carwash-backend.herokuapp.com/api/verification"
         };
     });
 
