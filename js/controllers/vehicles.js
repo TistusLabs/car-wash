@@ -16,6 +16,7 @@ function vehicleController($scope, $rootScope, $state, $timeout, $http, $systemU
         }).then(function (response, status) {
             if (response.data.IsSuccess) {
                 $rootScope.showToast("Vehicle details added successfully.");
+                $rootScope.navigateToState("all-vehicles");
             } else {
                 $rootScope.showToast("There was an error when trying to save the vehicle details.");
             }
@@ -54,6 +55,7 @@ function vehicleController($scope, $rootScope, $state, $timeout, $http, $systemU
                         { name: "currentMileage", title: "Mileage", type: "number", width: 150 }
                     ]
                 });
+                $scope.allvehicles = response.data;
             } else if (response.data.Error != null) {
                 $rootScope.showToast("Failed to get customer details.");
             }

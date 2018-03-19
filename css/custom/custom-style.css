@@ -1,11 +1,9 @@
-/*================================================================================
-	Item Name: Materialize - Material Design Admin Template
-	Version: 3.0
-	Author: GeeksLabs
-	Author URL: http://www.themeforest.net/user/geekslabs
-================================================================================
-
-NOTE:
-------
-PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
-WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+.boxTemplate {
+	/* height: 45px; */
+	/* width: 100%; */
+	background-color: darkgrey;
+	margin: 10px;
+	padding: 10px;
+	/* cursor: pointer; */
+	float:  left;
+}

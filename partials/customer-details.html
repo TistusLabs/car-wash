@@ -59,16 +59,16 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <label class="active" for="address">Tagged Vehicles</label>
-                                    <div>
-                                        <p><b>Vehicle One</b></p>
-                                        <p>Vehicle info</p>
+                                    <tagvehicle tag="tag" untaggedvehiclelist="allvehicles" ng-repeat="tag in profile.otherDetails.vehicles"></tagvehicle>
+                                    <div ng-click="addNewTagToProfile()" class="boxTemplate" style="cursor: pointer;">
+                                        <i class="mdi-content-add"></i>Tag Vehicle</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <button ng-click="" ng-disabled='newcustomer.$invalid' class="btn waves-effect waves-light " type="submit" name="action">Update</button>
-                                    <button ng-click="" class="btn waves-effect waves-light " type="button" name="action">Delete</button>
+                                    <button ng-click="updateProfile()" ng-disabled='newcustomer.$invalid' class="btn waves-effect waves-light " type="submit" name="action">Update</button>
+                                    <button ng-click="" class="btn waves-effect waves-light " type="button" name="action">Remove Customer</button>
                                 </div>
                             </div>
                         </form>

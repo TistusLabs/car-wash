@@ -510,10 +510,13 @@
     <script src="bower_components/angular-filter/dist/angular-filter.min.js"></script>
     <script type="text/javascript" src="common/uiKernal.js"></script>
     <script type="text/javascript" src="app.js"></script>
+    <!-- Controllers -->
     <script type="text/javascript" src="js/controllers/dashboard.js"></script>
     <script type="text/javascript" src="js/controllers/documents.js"></script>
     <script type="text/javascript" src="js/controllers/customer.js"></script>
     <script type="text/javascript" src="js/controllers/vehicles.js"></script>
+    <!-- Directives -->
+    <script type="text/javascript" src="js/directives/tagvehicle.js"></script>
 
     <!-- jQuery Library -->
     <script type="text/javascript" src="js/plugins/jquery-1.11.2.min.js"></script>

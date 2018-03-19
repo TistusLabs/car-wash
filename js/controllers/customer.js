@@ -31,6 +31,11 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
         $scope.profile = {};
     }
 
+    $scope.updateProfile = function(){
+        debugger
+        console.log($scope.profile);
+    }
+
     $scope.getCustomerByID = function (ID) {
         $http({
             method: "GET",
@@ -50,8 +55,36 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
             $rootScope.showToast("Failed to get customer details.");
         });
     }
-    if(!$rootScope.isNullOrEmptyOrUndefined($state.params.customerID)){
+    if (!$rootScope.isNullOrEmptyOrUndefined($state.params.customerID)) {
         $scope.getCustomerByID($state.params.customerID);
+    }
+
+    $scope.addNewTagToProfile = function () {
+
+        var newObj = {
+            "registrationNumber": "Registration Number"
+        };
+        $scope.profile.otherDetails.vehicles.push(newObj);
+    }
+
+    $scope.getAllVehicles = function () {
+        $http({
+            method: "GET",
+            url: $systemUrls.vehicleService + "s",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data != null) {
+                $scope.allvehicles = response.data;
+            } else if (response.data.Error != null) {
+                $rootScope.showToast("Failed to get vehicle details.");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("Failed to get vehicle details.");
+        });
     }
 
     $scope.getAllCustomers = function () {
@@ -95,4 +128,5 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
 
     }
     $scope.getAllCustomers();
+    $scope.getAllVehicles();
 }
