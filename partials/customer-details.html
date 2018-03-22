@@ -59,7 +59,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <label class="active" for="address">Tagged Vehicles</label>
-                                    <tagvehicle tag="tag" untaggedvehiclelist="allvehicles" ng-repeat="tag in profile.otherDetails.vehicles"></tagvehicle>
+                                    <tagvehicle id="directive_{{$index}}" tagged="vdetails" untaggedvehiclelist="allvehicles" ng-repeat="vdetails in profile.otherDetails.vehicles"></tagvehicle>
                                     <div ng-click="addNewTagToProfile()" class="boxTemplate" style="cursor: pointer;">
                                         <i class="mdi-content-add"></i>Tag Vehicle</a>
                                     </div>

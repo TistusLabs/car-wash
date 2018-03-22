@@ -5,7 +5,7 @@ app.directive("tagvehicle", function ($filter, ) {
         restrict: "EAA",
         scope: {
             untaggedvehiclelist: "=",
-            tag: "=",
+            tagged: "=",
             'updateApplication': '&',
             'reloadpage': '&'
         },
@@ -22,7 +22,7 @@ app.directive("tagvehicle", function ($filter, ) {
             scope.changed= function(){
                 debugger
                 scope.$apply();
-                console.log(scope.tag);
+                console.log(scope.tagged);
             }
 
         }

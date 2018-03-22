@@ -1,10 +1,10 @@
 <div class="boxTemplate">
     <div ng-show="mode=='view'">
-        <i class="mdi-maps-directions-car"></i>{{tag.registrationNumber}}</a>
+        <i class="mdi-maps-directions-car"></i>{{tagged.registrationNumber}}</a>
         <input type="button" value="Edit" ng-click="changeMode('edit')">
     </div>
     <div ng-show="mode=='edit'">
-        <select ng-model="tag" ng-options="x.registrationNumber for x in untaggedvehiclelist" ng-change="changed()">
+        <select ng-model="tagged" ng-options="x.registrationNumber for x in untaggedvehiclelist" ng-change="changed()">
         </select>
         <!-- <select ng-model="tag">
             <option ng-repeat="tag in untaggedvehiclelist">{{tag.registrationNumber}}</option>
