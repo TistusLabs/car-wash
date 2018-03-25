@@ -31,10 +31,61 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
         $scope.profile = {};
     }
 
-    $scope.updateProfile = function(){
-        debugger
-        console.log($scope.profile);
+    $scope.markVehiclesAsTagged = function () {
+        $http({
+            method: "POST",
+            url: $systemUrls.profileService,
+            data: profile,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data.IsSuccess) {
+                $rootScope.showToast("Customer details updated successfully.");
+                $scope.markVehiclesAsTagged();
+                $scope.profile = {};
+                $rootScope.navigateToState("all-customers");
+            } else {
+                $rootScope.showToast("There was an error when trying to update the customer details.");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("There was an error when trying to update the customer details.");
+        });
     }
+
+    $scope.updateProfile = function (profile) {
+        $http({
+            method: "POST",
+            url: $systemUrls.profileService,
+            data: profile,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data.IsSuccess) {
+                $rootScope.showToast("Customer details updated successfully.");
+                //$scope.markVehiclesAsTagged();
+                $scope.profile = {};
+                $rootScope.navigateToState("all-customers");
+            } else {
+                $rootScope.showToast("There was an error when trying to update the customer details.");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("There was an error when trying to update the customer details.");
+        });
+    }
+
+    $scope.$on('changedVehicle', function (event, data) {
+        $scope.profile.otherDetails.vehicles.splice(data.index, 1, { "registrationNumber": data.vehicle.registrationNumber });;
+    });
+
+    $scope.$on('removedVehicle', function (event, data) {
+        $scope.profile.otherDetails.vehicles.splice(data.index, 1);;
+    });
 
     $scope.getCustomerByID = function (ID) {
         $http({

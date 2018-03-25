@@ -2,6 +2,7 @@
     <div ng-show="mode=='view'">
         <i class="mdi-maps-directions-car"></i>{{tagged.registrationNumber}}</a>
         <input type="button" value="Edit" ng-click="changeMode('edit')">
+        <input type="button" value="Remove" ng-click="removeVehicle()">
     </div>
     <div ng-show="mode=='edit'">
         <select ng-model="tagged" ng-options="x.registrationNumber for x in untaggedvehiclelist" ng-change="changed()">

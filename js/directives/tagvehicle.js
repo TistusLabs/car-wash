@@ -6,6 +6,7 @@ app.directive("tagvehicle", function ($filter, ) {
         scope: {
             untaggedvehiclelist: "=",
             tagged: "=",
+            objindex: "=",
             'updateApplication': '&',
             'reloadpage': '&'
         },
@@ -19,10 +20,12 @@ app.directive("tagvehicle", function ($filter, ) {
                 scope.mode = mode
             };
 
-            scope.changed= function(){
-                debugger
-                scope.$apply();
-                console.log(scope.tagged);
+            scope.changed = function () {
+                scope.$emit('changedVehicle', { "vehicle": scope.tagged, "index": scope.objindex });
+            }
+
+            scope.removeVehicle = function () {
+                scope.$emit('removedVehicle', { "vehicle": scope.tagged, "index": scope.objindex });
             }
 
         }
