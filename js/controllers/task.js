@@ -14,11 +14,11 @@ function taskController($scope, $rootScope, $state, $timeout, $http, $systemUrls
         $scope.task = {
             regNumber: "",
             taskID: $utilFunctions.createuuid(),
-            date: Date.now(),
+            date: new Date(),
             customerName: ""
         };
-        debugger
-        console.log($scope.task);
+        //debugger
+        //console.log($scope.task);
     }
     $scope.initiateNewTask();
 
@@ -27,8 +27,25 @@ function taskController($scope, $rootScope, $state, $timeout, $http, $systemUrls
         console.log($scope.task);
     }
 
-    $scope.loadCustomerInfo = function(regNumber){
-        
+    $scope.loadCustomerInfo = function (vehicle) {
+        debugger
+        $http({
+            method: "GET",
+            url: $systemUrls.profileService + "/" + vehicle.profileID,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data != null) {
+                $scope.task.customerName = response.data.firstName + " " + response.data.lastName;
+            } else {
+                $rootScope.showToast("No Customer found of that ID number..");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("Failed to get customer details.");
+        });
     }
 
     $scope.getAllVehicles = function () {
