@@ -14,10 +14,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/dashboard',
             templateUrl: 'partials/dashboard.html',
             controller: 'DashboardController'
-        }).state('documents', {
-            url: '/documents',
-            templateUrl: 'partials/documents.html',
-            controller: 'DocumentController'
+        }).state('tasks-ongoing', {
+            url: '/tasks-ongoing',
+            templateUrl: 'partials/tasks-ongoing.html',
+            controller: 'TaskController'
         }).state('fileupload', {
             url: '/fileupload',
             templateUrl: 'partials/fileupload.html',

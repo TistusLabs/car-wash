@@ -229,7 +229,7 @@
                         </a>
                     </li>
                     <li class="bold">
-                        <a ui-sref="documents" class="waves-effect waves-cyan">
+                        <a ui-sref="tasks-ongoing" class="waves-effect waves-cyan">
                             <i class="mdi-action-history"></i>Ongoing Tasks
                         </a>
                     </li>

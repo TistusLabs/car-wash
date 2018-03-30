@@ -10,6 +10,23 @@ function taskController($scope, $rootScope, $state, $timeout, $http, $systemUrls
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
 
+    $("#jsGrid-static").jsGrid({
+        height: "70%",
+        width: "100%",
+        editing: true,
+        sorting: true,
+        paging: true,
+        fields: [
+            { name: "Name", type: "text", width: 150 },
+            { name: "Age", type: "number", width: 50 },
+            { name: "Address", type: "text", width: 200 },
+            { name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
+            { name: "Married", type: "checkbox", title: "Is Married" },
+            { type: "control" }
+        ],
+        data: db.clients
+    });
+
     $scope.initiateNewTask = function () {
         $scope.task = {
             regNumber: "",
