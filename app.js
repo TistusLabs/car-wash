@@ -14,8 +14,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/dashboard',
             templateUrl: 'partials/dashboard.html',
             controller: 'DashboardController'
-        })
-        .state('documents', {
+        }).state('documents', {
             url: '/documents',
             templateUrl: 'partials/documents.html',
             controller: 'DocumentController'
@@ -43,6 +42,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/all-vehicles',
             templateUrl: 'partials/vehicles-all.html',
             controller: 'VehicleController'
+        }).state('new-task', {
+            url: '/new-task',
+            templateUrl: 'partials/vehicle-task.html',
+            controller: 'TaskController'
         });
 
 }
@@ -69,7 +72,7 @@ function mainController($scope, $rootScope, $state, $timeout, $http) {
         return !value;
     };
 
-    $rootScope.navigateToState = function(to){
+    $rootScope.navigateToState = function (to) {
         $state.go(to);
     }
 }

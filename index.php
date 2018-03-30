@@ -32,16 +32,17 @@
 
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
     <!-- <link rel="stylesheet" href="bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css" type="text/css"> -->
+    <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
     <!--dropify-->
     <link href="js/plugins/dropify/css/dropify.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <!--jsgrid css-->
-  <link href="js/plugins/jsgrid/css/jsgrid.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="js/plugins/jsgrid/css/jsgrid-theme.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <!--jsgrid css-->
+    <link href="js/plugins/jsgrid/css/jsgrid.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/jsgrid/css/jsgrid-theme.min.css" type="text/css" rel="stylesheet" media="screen,projection">
     <!--data-tables-->
-  <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 </head>
 
@@ -223,7 +224,7 @@
                         </a>
                     </li>
                     <li class="bold">
-                        <a ui-sref="documents" class="waves-effect waves-cyan">
+                        <a ui-sref="new-task" class="waves-effect waves-cyan">
                             <i class="mdi-content-add-box"></i>New Task
                         </a>
                     </li>
@@ -515,6 +516,7 @@
     <script type="text/javascript" src="js/controllers/documents.js"></script>
     <script type="text/javascript" src="js/controllers/customer.js"></script>
     <script type="text/javascript" src="js/controllers/vehicles.js"></script>
+    <script type="text/javascript" src="js/controllers/task.js"></script>
     <!-- Directives -->
     <script type="text/javascript" src="js/directives/tagvehicle.js"></script>
 

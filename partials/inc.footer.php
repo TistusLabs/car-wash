@@ -4,8 +4,8 @@
         <div class="container">
             <span>Copyright ©
                 <?php echo date("Y"); ?>
-                <a class="grey-text text-lighten-4" href="#" target="_blank">OSTrio</a> All rights reserved.</span>
-            <span class="right">OSTrio Ceylon
+                <a class="grey-text text-lighten-4" href="https://www.tistuslabs.com" target="_blank">Tistuslabs</a> All rights reserved.</span>
+            <span class="right">Tistuslabs
             </span>
         </div>
     </div>

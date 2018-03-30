@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">New Task</h5>
+        <ol class="breadcrumbs">
+            <li>
+                <a>General</a>
+            </li>
+            <li>
+                <a>Tasks</a>
+            </li>
+            <li>
+                <a class="active" ui-sref="new-customer">New Task</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 12">
+        <p class="caption">You can use this page to add new Jobs at your service station.</p>
+
+        <div class="divider"></div>
+
+        <div id="input-fields">
+            <h4 class="header">Task Details</h4>
+            <div class="row">
+                <div class="col s12 m4 l3">
+                    <p>Please enter the vehicle registation number at start the Job.</p>
+                </div>
+                <div class="col s12 m8 l9">
+                    <div class="row">
+                        <form class="col s12" name="newtask">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <label class="active" for="RegistrationNumber">Registration Number</label>
+                                    <select ng-change="loadCustomerInfo(task.regNumber)" id="RegistrationNumber" ng-model="task.regNumber" ng-options="x.registrationNumber for x in allvehicles">
+                                    </select>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-model="task.taskID" id="Make" type="text" class="validate" readonly>
+                                    <label class="active" for="Make">Task ID</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input ng-model="task.date" id="today" type="date" class="datepicker">
+                                    <label class="active" for="today">Date</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-model="task.customerName" id="CurrentMileage" type="text" class="validate" readonly>
+                                    <label for="CurrentMileage">Customer Name</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button ng-click="addNewTask(task)" ng-disabled='newtask.$invalid' class="btn waves-effect waves-light " type="submit" name="action">Add Task</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

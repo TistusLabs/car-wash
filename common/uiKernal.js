@@ -224,6 +224,23 @@
         }
     });
 
+    uik.factory('$utilFunctions', function ($http, $rootScope, $helpers) {
+
+        function generateRandomID() {
+            var uuid = Math.floor((1 + Math.random()) * 0x1000000).toString(16).substring(1);
+            var hostname = window.location.hostname;
+            var code = window.btoa(hostname + "-" + uuid)
+            code = code.replace(/=/g, '');
+            return code;
+        }
+
+        return {
+            createuuid: function () {
+                return generateRandomID();
+            },
+        }
+    });
+
     uik.factory('$systemUrls', function () {
         var p = location.protocol;
         return {

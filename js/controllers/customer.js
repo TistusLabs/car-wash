@@ -31,20 +31,24 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
         $scope.profile = {};
     }
 
-    $scope.markVehiclesAsTagged = function () {
+    $scope.markVehiclesAsTagged = function (profileID, vehicles, index) {
+        debugger
         $http({
             method: "POST",
-            url: $systemUrls.profileService,
-            data: profile,
+            url: $systemUrls.vehicleService + "s/tag",
+            data: { "profileID": profileID, "regNumber": vehicles[index].registrationNumber },
             headers: {
                 "Content-Type": "application/json"
             }
         }).then(function (response, status) {
             if (response.data.IsSuccess) {
-                $rootScope.showToast("Customer details updated successfully.");
-                $scope.markVehiclesAsTagged();
-                $scope.profile = {};
-                $rootScope.navigateToState("all-customers");
+                if (vehicles.length > index +1) {
+                    $scope.markVehiclesAsTagged(profileID, vehicles, index + 1);
+                } else {
+                    $rootScope.showToast("All vehicles tagged to Customer successfully.");
+                    $scope.profile = {};
+                    $rootScope.navigateToState("all-customers");
+                }
             } else {
                 $rootScope.showToast("There was an error when trying to update the customer details.");
             }
@@ -65,10 +69,13 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
             }
         }).then(function (response, status) {
             if (response.data.IsSuccess) {
-                $rootScope.showToast("Customer details updated successfully.");
-                //$scope.markVehiclesAsTagged();
-                $scope.profile = {};
-                $rootScope.navigateToState("all-customers");
+                if ($scope.profile.otherDetails.vehicles.length > 0) {
+                    $scope.markVehiclesAsTagged($scope.profile._id, $scope.profile.otherDetails.vehicles, 0);
+                } else {
+                    $rootScope.showToast("Customer details updated successfully.");
+                    $scope.profile = {};
+                    $rootScope.navigateToState("all-customers");
+                }
             } else {
                 $rootScope.showToast("There was an error when trying to update the customer details.");
             }

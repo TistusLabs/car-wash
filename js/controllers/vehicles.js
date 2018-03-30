@@ -5,6 +5,11 @@ app.controller('VehicleController', ['$scope', '$rootScope', '$state', '$timeout
 function vehicleController($scope, $rootScope, $state, $timeout, $http, $systemUrls, $helpers) {
     console.log("Vehicle controller loaded");
 
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+
     $scope.addNewVehicle = function (vehicle) {
         $http({
             method: "POST",
