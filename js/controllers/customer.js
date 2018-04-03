@@ -8,6 +8,8 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
     // console.log($state.params);
 
     $scope.addNewCustomer = function (profile) {
+        profile.otherDetails = {};
+        profile.otherDetails.vehicles = [];
         $http({
             method: "POST",
             url: $systemUrls.profileService,
@@ -42,7 +44,7 @@ function customerController($scope, $rootScope, $state, $timeout, $http, $system
             }
         }).then(function (response, status) {
             if (response.data.IsSuccess) {
-                if (vehicles.length > index +1) {
+                if (vehicles.length > index + 1) {
                     $scope.markVehiclesAsTagged(profileID, vehicles, index + 1);
                 } else {
                     $rootScope.showToast("All vehicles tagged to Customer successfully.");
