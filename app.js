@@ -46,6 +46,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/new-task',
             templateUrl: 'partials/vehicle-task.html',
             controller: 'TaskController'
+        }).state('all-tasks', {
+            url: '/all-tasks',
+            templateUrl: 'partials/tasks-all.html',
+            controller: 'TaskController'
         });
 
 }

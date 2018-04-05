@@ -36,19 +36,28 @@
                                     </select>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input ng-model="task.taskID" id="Make" type="text" class="validate" readonly>
-                                    <label class="active" for="Make">Task ID</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input ng-model="task.date" id="today" type="date" class="datepicker">
-                                    <label class="active" for="today">Date</label>
-                                </div>
-                                <div class="input-field col s6">
                                     <input ng-model="task.customerName" id="custName" type="text" class="validate" readonly>
                                     <label class="active" for="custName">Customer Name</label>
                                 </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s3">
+                                    <input ng-model="task.currentMileage" id="currentMileage" type="number" class="validate" required>
+                                    <label class="active" for="currentMileage">Current Mileage</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input ng-model="task.taskNumber" id="taskNumber" type="text" class="validate" readonly>
+                                    <label class="active" for="taskNumber">Task No</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input ng-model="task.date" id="today" type="date" class="datepicker">
+                                    <label class="active" for="today">Date</label>
+                                </div>
+                                <div class="input-field col s3">
+                                    <input ng-model="task.date" id="time" type="time" class="timepicker">
+                                    <label class="active" for="time">Time</label>
+                                </div>
+
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">

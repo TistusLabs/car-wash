@@ -10,27 +10,10 @@ function taskController($scope, $rootScope, $state, $timeout, $http, $systemUrls
         selectYears: 15 // Creates a dropdown of 15 years to control year
     });
 
-    $("#jsGrid-static").jsGrid({
-        height: "70%",
-        width: "100%",
-        editing: true,
-        sorting: true,
-        paging: true,
-        fields: [
-            { name: "Name", type: "text", width: 150 },
-            { name: "Age", type: "number", width: 50 },
-            { name: "Address", type: "text", width: 200 },
-            { name: "Country", type: "select", items: db.countries, valueField: "Id", textField: "Name" },
-            { name: "Married", type: "checkbox", title: "Is Married" },
-            { type: "control" }
-        ],
-        data: db.clients
-    });
-
     $scope.initiateNewTask = function () {
         $scope.task = {
             regNumber: "",
-            taskID: $utilFunctions.createuuid(),
+            taskNumber: 0,
             date: new Date(),
             customerName: ""
         };
@@ -39,13 +22,32 @@ function taskController($scope, $rootScope, $state, $timeout, $http, $systemUrls
     }
     $scope.initiateNewTask();
 
-    $scope.addNewTask = function () {
+    $scope.addNewTask = function (task) {
         debugger
-        console.log($scope.task);
+        task.regNumber = task.regNumber.registrationNumber;
+        $http({
+            method: "POST",
+            url: $systemUrls.taskService,
+            data: task,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data.IsSuccess) {
+                $rootScope.showToast("New task added successfully.");
+                $rootScope.navigateToState("tasks-ongoing");
+            } else {
+                $rootScope.showToast("There was an error when trying to save the task details.");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("There was an error when trying to save the task details.");
+        });
     }
 
     $scope.loadCustomerInfo = function (vehicle) {
-        debugger
+        //debugger
         $http({
             method: "GET",
             url: $systemUrls.profileService + "/" + vehicle.profileID,
@@ -85,4 +87,74 @@ function taskController($scope, $rootScope, $state, $timeout, $http, $systemUrls
         });
     }
     $scope.getAllVehicles();
+
+    $scope.getAllOngoingtasks = function () {
+        $http({
+            method: "GET",
+            url: $systemUrls.taskService + "s/ongoing",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data != null) {
+                $("#allongoingtasks").jsGrid({
+                    height: "70%",
+                    width: "100%",
+                    editing: false,
+                    sorting: true,
+                    paging: true,
+                    fields: [
+                        { name: "registrationNumber", title: "Vehicle", type: "text", width: 150 },
+                        { name: "taskNumber", title: "Task No.", type: "text", width: 200 },
+                        { name: "currentMileage", title: "Mileage", type: "text", width: 200 }
+                    ],
+                    data: response.data.Data
+                });
+            } else if (response.data.Error != null) {
+                $rootScope.showToast("Failed to get customer details.");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("Failed to get customer details.");
+        });
+    }
+
+    $scope.getAllTasks = function () {
+        $http({
+            method: "GET",
+            url: $systemUrls.taskService + "s",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }).then(function (response, status) {
+            if (response.data != null) {
+                $("#alltasks").jsGrid({
+                    height: "70%",
+                    width: "100%",
+                    editing: false,
+                    sorting: true,
+                    paging: true,
+                    fields: [
+                        { name: "registrationNumber", title: "Vehicle", type: "text", width: 150 },
+                        { name: "taskNumber", title: "Task No.", type: "text", width: 200 },
+                        { name: "currentMileage", title: "Mileage", type: "text", width: 200 }
+                    ],
+                    data: response.data
+                });
+            } else if (response.data.Error != null) {
+                $rootScope.showToast("Failed to get customer details.");
+            }
+            console.log(response, status);
+        }, function (response, status) {
+            console.log(response, status);
+            $rootScope.showToast("Failed to get customer details.");
+        });
+    }
+
+    if ($state.current.name == "tasks-ongoing") {
+        $scope.getAllOngoingtasks();
+    } else if ($state.current.name == "all-tasks") {
+        $scope.getAllTasks();
+    }
 }

@@ -280,7 +280,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a href="layout-fullscreen.html">All Tasks</a>
+                                            <a ui-sref="all-tasks">All Tasks</a>
                                         </li>
                                     </ul>
                                 </div>

@@ -246,6 +246,7 @@
         return {
             userService: p + "//carwash-backend.herokuapp.com/api/users",
             profileService: p + "//carwash-backend.herokuapp.com/api/profile",
+            taskService: p + "//carwash-backend.herokuapp.com/api/task",
             vehicleService: p + "//carwash-backend.herokuapp.com/api/vehicle",
             emailService: p + "//carwash-backend.herokuapp.com/api/verification"
         };
