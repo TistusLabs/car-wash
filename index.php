@@ -67,7 +67,7 @@
                         <li>
                             <h1 class="logo-wrapper">
                                 <a href="index.html" class="brand-logo darken-1">
-                                    <img src="images/materialize-logo.png" alt="materialize logo">
+                                    <img src="images/carwashtext-logo.png" alt="materialize logo">
                                 </a>
                                 <span class="logo-text">Materialize</span>
                             </h1>
@@ -181,7 +181,7 @@
             <!-- START LEFT SIDEBAR NAV-->
             <aside id="left-sidebar-nav">
                 <ul id="slide-out" class="side-nav fixed leftside-navigation">
-                    <li class="user-details cyan darken-2">
+                    <li class="user-details green darken-2">
                         <div class="row">
                             <div class="col col s4 m4 l4">
                                 <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
