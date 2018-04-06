@@ -1,38 +1,26 @@
 <!-- dashboard controlls -->
 <div id="card-stats">
-    <div class="row">
+    <div ng-show="dashboardmenu == 'main'" class="row">
         <div class="col s12 m6 l3">
-            <div class="card dashboardButton" ui-sref="new-task">
-                <div class="card-content white-text grey">
-                    <i class="mdi-content-add-box medium"></i>
+            <div class="card dashboardButton" ng-click="changeMenu('task')">
+                <div class="card-content white-text blue">
+                    <i class="mdi-action-work medium"></i>
                 </div>
-                <div class="card-action white-text grey darken-2">
+                <div class="card-action white-text blue darken-2">
                     <center>
-                        <span class="card-stats-title text-lighten-5">New Task</span>
+                        <span class="card-stats-title text-lighten-5">Let's Work</span>
                     </center>
                 </div>
             </div>
         </div>
         <div class="col s12 m6 l3">
-            <div class="card dashboardButton" ui-sref="new-customer">
-                <div class="card-content white-text grey">
-                    <i class="mdi-social-person medium"></i>
+            <div class="card dashboardButton" ng-click="changeMenu('registration')">
+                <div class="card-content white-text green">
+                    <i class="mdi-action-assignment medium"></i>
                 </div>
-                <div class="card-action white-text grey darken-2">
+                <div class="card-action white-text green darken-2">
                     <center>
-                        <span class="card-stats-title text-lighten-5">New Customer</span>
-                    </center>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 m6 l3">
-            <div class="card dashboardButton" ui-sref="new-vehicle">
-                <div class="card-content white-text grey">
-                    <i class="mdi-maps-directions-car medium"></i>
-                </div>
-                <div class="card-action white-text grey darken-2">
-                    <center>
-                        <span class="card-stats-title text-lighten-5">New Vehicle</span>
+                        <span class="card-stats-title text-lighten-5">Registrations</span>
                     </center>
                 </div>
             </div>
@@ -45,6 +33,106 @@
                 <div class="card-action white-text grey darken-2">
                     <center>
                         <span class="card-stats-title text-lighten-5">System Config</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="dashboardmenu == 'task'" class="row">
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="new-task">
+                <div class="card-content white-text blue">
+                    <i class="mdi-content-add-box medium"></i>
+                </div>
+                <div class="card-action white-text blue darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">New Task</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="tasks-ongoing">
+                <div class="card-content white-text blue">
+                    <i class="mdi-action-view-list medium"></i>
+                </div>
+                <div class="card-action white-text blue darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">View Ongoing Tasks</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="all-tasks">
+                <div class="card-content white-text blue">
+                    <i class="mdi-action-view-list medium"></i>
+                </div>
+                <div class="card-action white-text blue darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">View all Tasks</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ng-click="changeMenu('main')">
+                <div class="card-content white-text grey">
+                    <i class="mdi-hardware-keyboard-arrow-left medium"></i>
+                </div>
+                <div class="card-action white-text grey darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Back</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="dashboardmenu == 'registration'" class="row">
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="new-customer">
+                <div class="card-content white-text green">
+                    <i class="mdi-social-person-add medium"></i>
+                </div>
+                <div class="card-action white-text green darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">New Customer</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="new-vehicle">
+                <div class="card-content white-text green">
+                    <i class="mdi-maps-directions-car medium"></i>
+                </div>
+                <div class="card-action white-text green darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">New Vehicle</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="all-customers">
+                <div class="card-content white-text green">
+                    <i class="mdi-social-group-add medium"></i>
+                </div>
+                <div class="card-action white-text green darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Tag Customer to Vehicle</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ng-click="changeMenu('main')">
+                <div class="card-content white-text grey">
+                    <i class="mdi-hardware-keyboard-arrow-left medium"></i>
+                </div>
+                <div class="card-action white-text grey darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Back</span>
                     </center>
                 </div>
             </div>

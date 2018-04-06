@@ -69,7 +69,7 @@
                                 <a href="index.html" class="brand-logo darken-1">
                                     <img src="images/carwashtext-logo.png" alt="materialize logo">
                                 </a>
-                                <span class="logo-text">Materialize</span>
+                                <span class="logo-text">Car wash</span>
                             </h1>
                         </li>
                     </ul>
