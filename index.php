@@ -296,7 +296,7 @@
                         </a>
                     </li>
                     <li class="bold">
-                        <a ui-sref="documents" class="waves-effect waves-cyan">
+                        <a ui-sref="new-inventory" class="waves-effect waves-cyan">
                             <i class="mdi-content-add-box"></i>Add New Item
                         </a>
                     </li>
@@ -517,6 +517,7 @@
     <script type="text/javascript" src="js/controllers/customer.js"></script>
     <script type="text/javascript" src="js/controllers/vehicles.js"></script>
     <script type="text/javascript" src="js/controllers/task.js"></script>
+    <script type="text/javascript" src="js/controllers/inventory.js"></script>
     <!-- Directives -->
     <script type="text/javascript" src="js/directives/tagvehicle.js"></script>
 

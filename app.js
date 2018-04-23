@@ -50,6 +50,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/all-tasks',
             templateUrl: 'partials/tasks-all.html',
             controller: 'TaskController'
+        }).state('new-inventory', {
+            url: '/new-inventory',
+            templateUrl: 'partials/inventory-addnew.html',
+            controller: 'InventoryController'
         });
 
 }
