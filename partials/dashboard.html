@@ -26,6 +26,18 @@
             </div>
         </div>
         <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ng-click="changeMenu('inventory')">
+                <div class="card-content white-text cyan">
+                    <i class="mdi-social-poll medium"></i>
+                </div>
+                <div class="card-action white-text cyan darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">My Inventory</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
             <div class="card dashboardButton" ui-sref="dashboard">
                 <div class="card-content white-text grey">
                     <i class="mdi-action-settings medium"></i>
@@ -121,6 +133,56 @@
                 <div class="card-action white-text green darken-2">
                     <center>
                         <span class="card-stats-title text-lighten-5">Tag Customer to Vehicle</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ng-click="changeMenu('main')">
+                <div class="card-content white-text grey">
+                    <i class="mdi-hardware-keyboard-arrow-left medium"></i>
+                </div>
+                <div class="card-action white-text grey darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Back</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-show="dashboardmenu == 'inventory'" class="row">
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="new-customer">
+                <div class="card-content white-text cyan">
+                    <i class="mdi-content-add-box medium"></i>
+                </div>
+                <div class="card-action white-text cyan darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Add New Item</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="new-vehicle">
+                <div class="card-content white-text cyan">
+                    <i class="mdi-social-plus-one medium"></i>
+                </div>
+                <div class="card-action white-text cyan darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Topup Stock</span>
+                    </center>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="card dashboardButton" ui-sref="all-customers">
+                <div class="card-content white-text cyan">
+                    <i class="mdi-social-poll medium"></i>
+                </div>
+                <div class="card-action white-text cyan darken-2">
+                    <center>
+                        <span class="card-stats-title text-lighten-5">Inventory Overview</span>
                     </center>
                 </div>
             </div>
