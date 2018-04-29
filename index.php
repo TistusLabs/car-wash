@@ -290,6 +290,42 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold">
+                                <a class="collapsible-header waves-effect waves-cyan">
+                                    <i class="mdi-action-account-child"></i>Dealers</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a ui-sref="new-customer">New Dealer</a>
+                                        </li>
+                                        <li>
+                                            <a ui-sref="all-customers">All Dealers</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li class="bold">
+                                <a class="collapsible-header waves-effect waves-cyan">
+                                    <i class="mdi-maps-local-shipping"></i>Suppliers</a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li>
+                                            <a ui-sref="new-customer">New Supplier</a>
+                                        </li>
+                                        <li>
+                                            <a ui-sref="all-customers">All Suppliers</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="li-hover">
                         <p class="ultra-small margin more-text">My Inventory</p>
                     </li>
@@ -308,7 +344,14 @@
                             <i class="mdi-social-plus-one"></i>Topup Stock
                         </a>
                     </li>
-                   
+                    <li class="li-hover">
+                        <p class="ultra-small margin more-text">Settings</p>
+                    </li>
+                    <li class="bold">
+                        <a ui-sref="all-inventory" class="waves-effect waves-cyan">
+                            <i class="mdi-action-settings"></i>System Configuration
+                        </a>
+                    </li>
                 </ul>
 
 
