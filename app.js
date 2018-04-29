@@ -54,6 +54,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/new-inventory',
             templateUrl: 'partials/inventory-addnew.html',
             controller: 'InventoryController'
+        }).state('all-inventory', {
+            url: '/all-inventory',
+            templateUrl: 'partials/inventory-all.html',
+            controller: 'InventoryController'
         });
 
 }

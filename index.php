@@ -282,6 +282,9 @@
                                         <li>
                                             <a ui-sref="all-tasks">All Tasks</a>
                                         </li>
+                                        <li>
+                                            <a ui-sref="all-tasks">Task Manager</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -291,7 +294,7 @@
                         <p class="ultra-small margin more-text">My Inventory</p>
                     </li>
                     <li class="bold">
-                        <a ui-sref="documents" class="waves-effect waves-cyan">
+                        <a ui-sref="all-inventory" class="waves-effect waves-cyan">
                             <i class="mdi-social-poll"></i>Inventory Overview
                         </a>
                     </li>
