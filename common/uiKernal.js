@@ -249,7 +249,8 @@
             taskService: p + "//carwash-backend.herokuapp.com/api/task",
             vehicleService: p + "//carwash-backend.herokuapp.com/api/vehicle",
             emailService: p + "//carwash-backend.herokuapp.com/api/verification",
-            inventoryService: p + "//carwash-backend.herokuapp.com/api/inventory"
+            inventoryService: p + "//carwash-backend.herokuapp.com/api/inventory",
+            dealerService: p + "//carwash-backend.herokuapp.com/api/dealer"
         };
     });
 

@@ -298,10 +298,10 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a ui-sref="new-customer">New Dealer</a>
+                                            <a ui-sref="new-dealer">New Dealer</a>
                                         </li>
                                         <li>
-                                            <a ui-sref="all-customers">All Dealers</a>
+                                            <a ui-sref="all-dealers">All Dealers</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -564,6 +564,7 @@
     <script type="text/javascript" src="js/controllers/vehicles.js"></script>
     <script type="text/javascript" src="js/controllers/task.js"></script>
     <script type="text/javascript" src="js/controllers/inventory.js"></script>
+    <script type="text/javascript" src="js/controllers/dealer.js"></script>
     <!-- Directives -->
     <script type="text/javascript" src="js/directives/tagvehicle.js"></script>
 

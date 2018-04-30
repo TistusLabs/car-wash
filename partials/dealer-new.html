@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col s12 m12 l12">
+        <h5 class="breadcrumbs-title">New Dealer</h5>
+        <ol class="breadcrumbs">
+            <li>
+                <a>General</a>
+            </li>
+            <li>
+                <a class="active" ui-sref="new-dealer">New Dealer</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12 12">
+        <p class="caption">You can use this page to add new dealers into your company.</p>
+
+        <div class="divider"></div>
+
+        <div id="input-fields">
+            <h4 class="header">New Dealer Details</h4>
+            <div class="row">
+                <div class="col s12 m4 l3">
+                    <p>Please enter the details of the dealer which you need to add into your system.</p>
+                    <p>Try to fill all the fields to improve your reports.</p>
+                </div>
+                <div class="col s12 m8 l9">
+                    <div class="row">
+                        <form class="col s12" name="newdealer">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input ng-model="dealer.name" id="name" type="text" class="validate" required>
+                                    <label for="name">Name</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-model="dealer.logoURL" id="LogoURL" type="text" class="validate">
+                                    <label for="LogoURL">Logo URL</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input ng-model="dealer.landline" id="Landline" type="text" class="validate">
+                                    <label for="Landline">Landline</label>
+                                </div>
+                                <div class="input-field col s6">
+                                    <input ng-model="dealer.mobile" id="mobile" type="text" class="validate">
+                                    <label for="mobile">Mobile</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input ng-model="dealer.address" value="" id="address" type="text" class="validate">
+                                    <label for="address">Address</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button ng-click="addNewDealer(dealer)" ng-disabled='newdealer.$invalid' class="btn waves-effect waves-light " type="submit"
+                                        name="action">Add Dealer</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

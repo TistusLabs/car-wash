@@ -58,6 +58,14 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/all-inventory',
             templateUrl: 'partials/inventory-all.html',
             controller: 'InventoryController'
+        }).state('all-dealers', {
+            url: '/all-dealers',
+            templateUrl: 'partials/dealers-all.html',
+            controller: 'DealerController'
+        }).state('new-dealer', {
+            url: '/new-dealer',
+            templateUrl: 'partials/dealer-new.html',
+            controller: 'DealerController'
         });
 
 }
